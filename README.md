@@ -1,7 +1,7 @@
 ## 使用C++语言实现[B站王卓老师的数据结构公开课课程代码](https://www.bilibili.com/video/BV1nJ411V7bd?p=1)
 
 | chapter 0        | chapter 1            | chapter 2    | chapter 3            | chapter 4 | chapter 5 |
-| ---------------- | -------------------- | ------------ | -------------------- | --------- | --------- |
+| :----------------: | :--------------------: | :------------: | :--------------------: | :---------: | :---------: |
 | [使用说明](#ch0) | [线性表、链表](#ch1) | [栈、队列]() | [串、数组和广义表]() | [树]()    | [图]()    |
 
 
@@ -59,9 +59,19 @@ L.data = new ElemType[MAXSIZE];
 
 
 
-### 线性表、链表
+### <span id="ch1">线性表、链表</span>
 
-**1. 线性表**
+**==1. 顺序线性表==**
+
+*线性表的定义*
+
+~~~cpp
+struct SqList
+{
+    ElemType *elem;//顺序线性表的表头
+    int length;//顺序线性表的长度
+};
+~~~
 
 *线性表的初始化*
 
@@ -129,7 +139,7 @@ bool GetELem(const SqList& L, const size_t &i, ElemType &e)
 ~~~cpp
 int LocateList(const SqList& L, const ElemType &e)
 {
-    for(size_t i = 0;i<L.length;++i)
+    for(int i = 0; i<L.length; ++i)
     {
         if(L.elem[i] == e)
         {
@@ -144,7 +154,7 @@ int LocateList(const SqList& L, const ElemType &e)
 ***线性表的插入***
 
 ~~~cpp
-bool InsertList(SqList& L, const ElemType &e, const size_t &i)
+bool InsertList(SqList& L, const ElemType &e, const int &i)
 {
     //判断线性表长度是否小于最大长度MAXSIZE
     if(L.length == MAXSIZE)
@@ -152,25 +162,65 @@ bool InsertList(SqList& L, const ElemType &e, const size_t &i)
         cerr<<"can not insert!"<<endl;
         return false;
     }
-    if(0<=i && i<=L.length)
-    {
-        //将位于插入位置之后的元素依次向后挪动一位
-        for (size_t p = L.length; p > i; --p)
-        {
-            L.elem[p] = L.elem[p - 1];
-        }
-        //插入元素
-        L.elem[i] = e;
-        //线性表长度+1
-        L.length += 1;
-        return true;
-    }
-    else 
+    if(i<0 || i>L.length)
     {
         cerr << "wrong insert position!" << endl;
         return false;
     }
-    
+    if(L.length > 0)
+    {
+        //将位于插入位置之后的元素依次向后挪动一位
+        for (int p = L.length - 1; p >= i; --p)
+        {
+            L.elem[p + 1] = L.elem[p];
+        }
+    }
+    //插入元素
+    L.elem[i] = e;
+    //线性表长度+1
+    L.length += 1;
+    return true;
+    //算法时间复杂度：O(n)
 }
+~~~
+
+***线性表的删除***
+
+~~~cpp
+ bool EraseList(SqList& L, const int &i)
+{
+    //异常判断
+    if(i<0 || i>L.length)
+    {
+        cerr << "wrong erase position!" << endl;
+        return false;
+    }
+    if(L.length == 0)
+    {
+        cerr << "List has no length" << endl;
+        return false;
+    }
+    //将位于删除位置之后的元素依次向前挪动一位
+    for (int p = i + 1; p < L.length; ++p)
+    {
+        L.elem[p - 1] = L.elem[p];
+    }
+    //线性表长度-1
+    L.length -= 1;
+    return true;
+    //算法时间复杂度：O(n)
+}
+~~~
+
+**==链表==**
+
+*链表的定义*
+
+~~~cpp
+struct Lnode
+{
+    ElemType data;//结点的数据域
+    Lnode *next;//结点的指针域
+};
 ~~~
 
