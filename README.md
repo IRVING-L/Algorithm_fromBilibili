@@ -1,6 +1,16 @@
-# 使用说明
+## 使用C++语言实现[B站王卓老师的数据结构公开课课程代码](https://www.bilibili.com/video/BV1nJ411V7bd?p=1)
 
-**eg1：**
+| chapter 0        | chapter 1            | chapter 2    | chapter 3            | chapter 4 | chapter 5 |
+| ---------------- | -------------------- | ------------ | -------------------- | --------- | --------- |
+| [使用说明](#ch0) | [线性表、链表](#ch1) | [栈、队列]() | [串、数组和广义表]() | [树]()    | [图]()    |
+
+
+
+
+
+### <span id="ch0">使用说明</span>
+
+**eg.1：**
 
 ~~~cpp
 //王卓老师视频中常用的结构体定义方式
@@ -25,7 +35,7 @@ class SqList
 };
 ~~~
 
-**eg2：**
+**eg.2：**
 
 ~~~c
 //C语言中动态分配内存的函数：malloc
@@ -46,3 +56,4 @@ L.data = (ElemType*)malloc(sizeof(ElemType)*MAXSIZE);
 //使用new重写上面的malloc
 L.data = new ElemType[MAXSIZE];
 ~~~
+
