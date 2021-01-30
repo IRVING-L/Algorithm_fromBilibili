@@ -8,9 +8,16 @@
 
 
 
-### <span id="ch0">使用说明</span>
+### <span id="ch0">使用说明</span>  
+**eg.1:**
 
-**eg.1：**
+~~~cpp
+//ElemType是数据类型别名，常见的有：
+typedef int ElemType;
+~~~
+
+
+**eg.2：**
 
 ~~~cpp
 //王卓老师视频中常用的结构体定义方式
@@ -35,7 +42,7 @@ class SqList
 };
 ~~~
 
-**eg.2：**
+**eg.3：**
 
 ~~~c
 //C语言中动态分配内存的函数：malloc
