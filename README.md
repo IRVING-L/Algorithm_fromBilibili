@@ -62,4 +62,5 @@ L.data = (ElemType*)malloc(sizeof(ElemType)*MAXSIZE);
 //本文将使用以下C++的动态内存分配方式：new
 //使用new重写上面的malloc
 L.data = new ElemType[MAXSIZE];
-~~~
+~~~  
+> 本人菜鸟一枚，欢迎大家闲暇时对代码或者总结提点Issue，笔芯
