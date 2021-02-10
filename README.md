@@ -1,18 +1,28 @@
 ## 使用C++语言实现[B站王卓老师的数据结构公开课课程代码](https://www.bilibili.com/video/BV1nJ411V7bd?p=1)
 
-| chapter 0        | chapter 1            | chapter 2    | chapter 3            | chapter 4 | chapter 5 |
-| :----------------: | :--------------------: | :------------: | :--------------------: | :---------: | :---------: |
-| [使用说明](#ch0) | [线性表、链表](https://github.com/IRVING-L/Algorithm_fromBilibili/blob/main/%E7%BA%BF%E6%80%A7%E8%A1%A8.md) | [栈、队列](https://github.com/IRVING-L/Algorithm_fromBilibili/blob/main/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97.md) | [串、数组和广义表] | [树](https://github.com/IRVING-L/DataStruct_fromBilibili/blob/main/%E4%BA%8C%E5%8F%89%E6%A0%91.md)    | [图](https://github.com/IRVING-L/DataStruct_fromBilibili/blob/main/%E5%9B%BE.md)    | 
-  
-  
-> [思维导图笔记](https://www.processon.com/view/link/601d43ad5653bb053e33e231)  
 
+### 文章目录
 
+**1-基础概念**
 
+- [思维导图笔记](https://www.processon.com/view/link/601d43ad5653bb053e33e231)
 
+**2-数据结构代码实现**
+
+- [线性表](https://github.com/IRVINGL/Algorithm_fromBilibili/blob/main/%E7%BA%BF%E6%80%A7%E8%A1%A8.md)
+- [栈、队列](https://github.com/IRVING-L/Algorithm_fromBilibili/blob/main/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97.md)
+- 串、数组、广义表
+- [树](https://github.com/IRVING-L/DataStruct_fromBilibili/blob/main/%E4%BA%8C%E5%8F%89%E6%A0%91.md)
+- [图](https://github.com/IRVING-L/DataStruct_fromBilibili/blob/main/%E5%9B%BE.md)
+
+**3-算法代码实现**
+
+- 查找算法
+- 排序算法
 
 
 ### <span id="ch0">使用说明</span>  
+
 **eg.1:**
 
 ~~~cpp
@@ -66,5 +76,6 @@ L.data = (ElemType*)malloc(sizeof(ElemType)*MAXSIZE);
 //本文将使用以下C++的动态内存分配方式：new
 //使用new重写上面的malloc
 L.data = new ElemType[MAXSIZE];
-~~~  
+~~~
+
 > 本人菜鸟一枚，欢迎大家闲暇时对代码或者总结提点Issue，笔芯
