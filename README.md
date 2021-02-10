@@ -17,7 +17,7 @@
 
 **3-算法代码实现**
 
-- 查找算法
+- [查找算法](https://github.com/IRVING-L/DataStruct_fromBilibili/blob/main/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95.md)
 - 排序算法
 
 
